@@ -29,7 +29,7 @@ const SignUp = () => {
       }
       setIsLoading(false)
       setError(null)
-      navigate("/sing-in")
+      navigate("/sign-in")
     } catch (error) {
       setError(error.message)
       setIsLoading(false)
