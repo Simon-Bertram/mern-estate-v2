@@ -6,6 +6,7 @@ import {
   signInSuccess,
   signInFailure,
 } from "../redux/slices/userSlice.js"
+import GoogleOAuth from "../components/GoogleOAuth.jsx"
 
 const SignIn = () => {
   const [formData, setFormData] = useState({})
@@ -40,9 +41,7 @@ const SignIn = () => {
 
   return (
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl text-center font-semibold my-7">
-        Sign In - with changes
-      </h1>
+      <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="email"
@@ -61,9 +60,7 @@ const SignIn = () => {
         <button disabled={isLoading} className="btn bg-gray-600 text-white p-3">
           {isLoading ? "Loading..." : "Sign In"}
         </button>
-        <button className="btn bg-blue-500 text-white p-3">
-          Continue with Google
-        </button>
+        <GoogleOAuth />
       </form>
       <div className="flex gap-2 mt-5">
         <p>Dont have an account?</p>

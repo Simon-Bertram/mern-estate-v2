@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import GoogleOAuth from "../components/GoogleOAuth.jsx"
 
 const SignUp = () => {
   const [formData, setFormData] = useState({})
@@ -64,9 +65,7 @@ const SignUp = () => {
         <button disabled={isLoading} className="btn bg-gray-600 text-white p-3">
           {isLoading ? "Loading..." : "Sign Up"}
         </button>
-        <button className="btn bg-blue-500 text-white p-3">
-          Continue with Google
-        </button>
+        <GoogleOAuth />
       </form>
       <div className="flex gap-2 mt-5">
         <p>Have an account?</p>

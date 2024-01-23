@@ -19,6 +19,11 @@ const userSchema = new mongoose.Schema(
       required: true,
       min: 6,
     },
+    avatar: {
+      type: String,
+      default:
+        "https://pngimg.com/uploads/question_mark/question_mark_PNG130.png",
+    },
   },
   { timestamps: true }
 );
