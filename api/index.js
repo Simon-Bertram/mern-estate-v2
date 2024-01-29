@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import userRouter from "./routes/user.routes.js";
 import authRouter from "./routes/auth.routes.js";
+import cors from "cors";
 import morgan from "morgan";
 
 mongoose
@@ -26,6 +27,13 @@ app.listen(3000, () => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(
+  cors({
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: ["http://localhost:5173"],
+    credentials: true,
+  })
+);
 app.use(morgan("dev"));
 
 // Routes middleware
